@@ -76,26 +76,26 @@ public interface Benchmark<T> {
             List<Integer> ord = new ArrayList<>();
             Collections.addAll(ord, ordered);
 
-            Benchmark<Integer> bm = new Benchmark_Timer<Integer>("Insertion Sort Timer", b->{new InsertionSort().sort(ord);});
-            orderedTimes.add(bm.run(10, 10));
+            Benchmark<Integer[]> bm = new Benchmark_Timer<>("Insertion Sort Timer", b->{new InsertionSort().sort(ord);});
+            orderedTimes.add(bm.run(ordered, 10));
 
             List<Integer> reve = new ArrayList<>();
             Collections.addAll(reve, reverse);
 
-            bm = new Benchmark_Timer<Integer>("Insertion Sort Timer", b->{new InsertionSort().sort(reve);});
-            reverseTimes.add(bm.run(10, 10));
+            bm = new Benchmark_Timer<>("Insertion Sort Timer", b->{new InsertionSort().sort(reve);});
+            reverseTimes.add(bm.run(reverse, 10));
 
             List<Integer> part = new ArrayList<>();
             Collections.addAll(part, partial);
 
-            bm = new Benchmark_Timer<Integer>("Insertion Sort Timer", b->{new InsertionSort().sort(part);});
-            partialTimes.add(bm.run(10, 10));
+            bm = new Benchmark_Timer<>("Insertion Sort Timer", b->{new InsertionSort().sort(part);});
+            partialTimes.add(bm.run(partial, 10));
 
             List<Integer> rand = new ArrayList<>();
             Collections.addAll(rand, random);
 
-            bm = new Benchmark_Timer<Integer>("Insertion Sort Timer", b->{new InsertionSort().sort(rand);});
-            randomTimes.add(bm.run(10, 10));
+            bm = new Benchmark_Timer<>("Insertion Sort Timer", b->{new InsertionSort().sort(rand);});
+            randomTimes.add(bm.run(random, 10));
         }
 
         System.out.println("size,Ordered,Reverse,Partial,Random");
