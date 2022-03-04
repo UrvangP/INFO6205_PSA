@@ -103,6 +103,7 @@ public interface Benchmark<T> {
         for(int i=0; i<orderedTimes.size(); ++i){
             n = n*2;
             System.out.println(n+","+orderedTimes.get(i)+ ","+reverseTimes.get(i)+ ","+partialTimes.get(i)+ ","+randomTimes.get(i));
+            System.out.println(Math.log(n)/Math.log(2)+","+Math.log(orderedTimes.get(i))/Math.log(2)+ ","+Math.log(reverseTimes.get(i))/Math.log(2)+ ","+Math.log(partialTimes.get(i))/Math.log(2)+ ","+Math.log(randomTimes.get(i))/Math.log(2));
 //            System.out.println("Ordered," + orderedTimes.get(i)+ ","+ n);
 //            System.out.println("Reverse," + reverseTimes.get(i)+ ","+ n);
 //            System.out.println("Partial," + partialTimes.get(i)+ ","+ n);
